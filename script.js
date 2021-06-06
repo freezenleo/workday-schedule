@@ -9,17 +9,19 @@ var threePm = $("#3pm");
 var fourPm = $("#4pm");
 var fivePm = $("#5pm");
 
-hourCurrent = moment();
-
+// current time in hour
+var hourCurrent = moment();
+//variable for text input and slot time
 var textInput;
 var calenderTime;
 
+//setting global time
 $(document).ready(function () {
     $("#currentDay").text(moment().format('dddd, MMM Do YYYY'))
 });
 
 
-
+//loading localstorage
 function loadingLocal() {
     var load9Am = JSON.parse(localStorage.getItem("9 AM"));
     nineAm.val(load9Am);
@@ -80,7 +82,7 @@ $(".description").each(function () {
 });
 
 
-
+// save button click
 $(".saveBtn").on("click", function () {
     textInput = $(this).siblings(".description").val().trim();
     calenderTime = $(this).siblings(".hour").text().trim();
